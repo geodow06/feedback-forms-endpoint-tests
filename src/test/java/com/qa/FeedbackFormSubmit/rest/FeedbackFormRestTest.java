@@ -16,7 +16,7 @@ public class FeedbackFormRestTest {
     
     @Test
     public void pingTest() {
-    	given().when().get("getForms").then().statusCode(200);
+    	given().when().get(getForms).then().statusCode(200);
     }
     
     
