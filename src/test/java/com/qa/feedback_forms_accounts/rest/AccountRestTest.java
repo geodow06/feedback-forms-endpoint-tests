@@ -8,7 +8,7 @@ import com.qa.feedback_forms_accounts.persistence.domain.Account;
 
 public class AccountRestTest {
 	
-	private String base_path ="http://localhost:8080/accounts";
+	private String base_path ="http://accounts:8080/accounts";
 	private String getAccounts="/getAccounts";
 	private String postAccount= "/createAccount"; 
 	private String getAccount = "/getAccountById/";
