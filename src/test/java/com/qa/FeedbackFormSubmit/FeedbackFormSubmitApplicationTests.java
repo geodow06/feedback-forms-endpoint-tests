@@ -11,10 +11,6 @@ import com.jayway.restassured.RestAssured;
 @SpringBootTest
 public class FeedbackFormSubmitApplicationTests {
 	
-//	@Test
-//	public void contextLoads() {
-//	}
-
     @BeforeClass
     public static void setup() {
         String port = System.getProperty("server.port");
