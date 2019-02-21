@@ -9,7 +9,7 @@ import com.qa.FeedbackFormSubmit.persistence.domain.FeedbackForm;
 
 public class FeedbackFormRestTest {
     
-    private String basePath ="http://submit:8080/accounts";
+    private String basePath ="http://submit:8080/feedbackForm";
 	private String getForms = basePath + "/getAllFeedbackForms";
 	private String postForm = basePath + "/createAccount"; 
 	private String getForm = basePath + "/getFeedbackFormByID/";
