@@ -5,10 +5,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import org.junit.Test;
 
-import com.qa.FeedbackFormSubmit.FeedbackFormSubmitApplicationTests;
 import com.qa.FeedbackFormSubmit.persistence.domain.FeedbackForm;
 
-public class FeedbackFormRestTest extends FeedbackFormSubmitApplicationTests{
+public class FeedbackFormRestTest {
+    
+    private String basePath ="http://submit:8080/accounts";
+	private String getForms = basePath + "/getAllFeedbackForms";
+	private String postForm = basePath + "/createAccount"; 
+	private String getForm = basePath + "/getFeedbackFormByID/";
     
     @Test
     public void pingTest() {
@@ -18,13 +22,13 @@ public class FeedbackFormRestTest extends FeedbackFormSubmitApplicationTests{
     
     @Test
     public void verifyGetFeedbackFormByIDWhenEmpty() {
-        given().when().get("/getFeedbackFormByID/100").then()
+        given().when().get(getForms).then()
             .body("message",equalTo("Id supplied does not exist. Id: 100"));
     }
     
     @Test
     public void verifyGetFeedbackFormByIDWhenNotEmpty() {
-    	given().when().get("/getFeedbackFormByID/1").then()
+    	given().when().get(getForm + "1").then()
         .body("feedbackID",equalTo(1))
         .body("cohortID",equalTo(1))
         .body("userID",equalTo(2))
@@ -38,13 +42,13 @@ public class FeedbackFormRestTest extends FeedbackFormSubmitApplicationTests{
     
     @Test
     public void verifyGetFeedbackFormsByUserIDEmpty() {
-    	given().when().get("/getFeedbackFormsByUserID/1").then()
+    	given().when().get(getForm + "1").then()
         .body(equalTo("[]"));
     }
     
     @Test
     public void verifyGetFeedbackFormsByUserIDNotEmpty() {
-    	given().when().get("/getFeedbackFormsByUserID/2").then().statusCode(200);
+    	given().when().get(getForm + "2").then().statusCode(200);
     }
     
     @Test
@@ -54,7 +58,7 @@ public class FeedbackFormRestTest extends FeedbackFormSubmitApplicationTests{
     	given()
         .contentType("application/json")
         .body(feedbackForm)
-        .when().post("/addFeedbackForm").then()
+        .when().post(postForm).then()
         .body("cohortID",equalTo(1))
         .body("userID",equalTo(2))
     	.body("week",equalTo(2))
@@ -67,6 +71,6 @@ public class FeedbackFormRestTest extends FeedbackFormSubmitApplicationTests{
     
     @Test
     public void verifyGetAllFeedbackForms() {
-    	given().when().get("/getFeedbackFormsByUserID/1").then().statusCode(200);
+    	given().when().get(getForm + "1").then().statusCode(200);
     }
 }
