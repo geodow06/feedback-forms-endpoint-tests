@@ -13,6 +13,7 @@ public class FeedbackFormRestTest {
 	private String getForms = basePath + "/getAllFeedbackForms";
 	private String postForm = basePath + "/createAccount"; 
 	private String getForm = basePath + "/getFeedbackFormByID/";
+	private String getUserForms = basePath + "/getFeedbackFormsByUserID/";
     
     @Test
     public void pingTest() {
@@ -22,8 +23,8 @@ public class FeedbackFormRestTest {
     
     @Test
     public void verifyGetFeedbackFormByIDWhenEmpty() {
-        given().when().get(getForms).then()
-            .body("message",equalTo("Id supplied does not exist. Id: 100"));
+        given().when().get(getForm + "10000").then()
+            .body("message",equalTo("Id supplied does not exist. Id: 10000"));
     }
     
     @Test
@@ -42,13 +43,13 @@ public class FeedbackFormRestTest {
     
     @Test
     public void verifyGetFeedbackFormsByUserIDEmpty() {
-    	given().when().get(getForm + "1").then()
+    	given().when().get(getUserForms + "1").then()
         .body(equalTo("[]"));
     }
     
     @Test
     public void verifyGetFeedbackFormsByUserIDNotEmpty() {
-    	given().when().get(getForm + "2").then().statusCode(200);
+    	given().when().get(getUserForms + "2").then().statusCode(200);
     }
     
     @Test
