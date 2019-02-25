@@ -8,8 +8,8 @@ import com.qa.accounts.persistence.domain.Account;
 
 public class AccountRestTest {
 	
-	private String base_path ="http://accounts:8080/accounts";
-	private String postAccount = base_path + "/createAccount"; 
+	private String basePath ="http://accounts:8080/accounts";
+	private String postAccount = basePath + "/createAccount"; 
 	
 	@Test
     public void verifyCreateAccount() {
