@@ -19,6 +19,6 @@ public class FeedbackFormRestTest {
     	given()
         .contentType("application/json")
         .body(feedbackForm)
-        .when().post(postForm).then().statusCode(200)
+        .when().post(postForm).then().statusCode(200);
     }
 }
