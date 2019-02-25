@@ -29,20 +29,17 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetAccountById() {
-		given().when().get(getAccountById + "1111111111").then()
-        .body("message",equalTo("Id supplied does not exist. Id: 1111111111"));
+		given().when().get(getAccountById + "1").then().statusCode(200);
 	}
 	
 	@Test
 	public void verifyGetAccountByEmail() {
-		given().when().get(getAccountByEmail + "email").then()
-        .body("message",equalTo("email supplied does not exist. email: email"));
+		given().when().get(getAccountByEmail + "Test.Account@qa.com").then().statusCode(200);
 	}
 	
 	@Test
 	public void verifyGetAccountByCohortId() {
-		given().when().get(getAccountByCohortId + "1111111111").then()
-        .body("message",equalTo("Id supplied does not exist. Id: 1111111111"));
+		given().when().get(getAccountByCohortId + "1").then().statusCode(200);
 	}
 	
 	@Test
@@ -52,8 +49,7 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetFeedbackFormByID() {
-		given().when().get(getFeedbackFormByID + "1111111111").then()
-        .body("message",equalTo("Id supplied does not exist. Id: 1111111111"));
+		given().when().get(getFeedbackFormByID + "1").then().statusCode(200);
 	}
 	
 	@Test
@@ -63,7 +59,6 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetCohortByID() {
-		given().when().get(getCohortByID + "1111111111").then()
-        .body("message",equalTo("Id supplied does not exist. Id: 1111111111"));
+		given().when().get(getCohortByID + "1").then().statusCode(200);
 	}
 }
