@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Cohort {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long cohortId;
+	private Long cohortID;
 	private String cohortName;
 	private String trainerName;
 	private int week;
@@ -26,12 +26,12 @@ public class Cohort {
 		this.cohortDescription = cohortDescription;
 	}
 
-	public Long getCohortId() {
-		return cohortId;
+	public Long getCohortID() {
+		return cohortID;
 	}
 
-	public void setCohortId(Long cohortId) {
-		this.cohortId = cohortId;
+	public void setCohortID(Long cohortID) {
+		this.cohortID = cohortID;
 	}
 
 	public String getCohortName() {

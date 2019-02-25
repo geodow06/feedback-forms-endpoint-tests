@@ -10,9 +10,9 @@ public class RetrieverRestTest {
 	
 	private String accounts = basePath + "/accounts";
 	private String getAccounts = accounts + "/getAccounts";
-	private String getAccountById = accounts + "/getByAccountID/";
+	private String getAccountByID = accounts + "/getByAccountID/";
 	private String getAccountByEmail = accounts + "/getByEmail/";
-	private String getAccountByCohortId = accounts + "/getByCohortID/";
+	private String getAccountByCohortID = accounts + "/getByCohortID/";
 	
 	private String forms = basePath + "/feedbackForm";
 	private String getAllFeedbackForms = forms + "/getAllFeedbackForms";
@@ -29,7 +29,7 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetAccountById() {
-		given().when().get(getAccountById + "1").then().body("accountID",equalTo(1));
+		given().when().get(getAccountByID + "1").then().body("accountID",equalTo(1));
 	}
 	
 	@Test
@@ -39,7 +39,7 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetAccountsByCohortId() {
-		given().when().get(getAccountByCohortId + "1").then().statusCode(200);
+		given().when().get(getAccountByCohortID + "1").then().statusCode(200);
 	}
 	
 	@Test
