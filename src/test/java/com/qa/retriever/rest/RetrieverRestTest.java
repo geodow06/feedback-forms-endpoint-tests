@@ -59,6 +59,6 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetCohortByID() {
-		given().when().get(getCohortByID + "1").then().body("cohortId",equalTo(1));
+		given().when().get(getCohortByID + "1").then().body("cohortID",equalTo(1));
 	}
 }
