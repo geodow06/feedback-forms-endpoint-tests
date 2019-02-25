@@ -10,10 +10,9 @@ public class RetrieverRestTest {
 	
 	private String accounts = basePath + "/accounts";
 	private String getAccounts = accounts + "/getAccounts";
-	private String getAccountById = accounts + "/getAccountById/";
-	private String getAccountByEmail = accounts + "/getAccountByEmail/";
-	private String getAccountByCohortId = accounts + "/getByCohortId/";
-	private String deleteAccountById = accounts + "/deleteById/";
+	private String getAccountById = accounts + "/getByAccountID/";
+	private String getAccountByEmail = accounts + "/getByEmail/";
+	private String getAccountByCohortId = accounts + "/getByCohortID/";
 	
 	private String forms = basePath + "/feedbackForm";
 	private String getAllFeedbackForms = forms + "/getAllFeedbackForms";
@@ -43,12 +42,6 @@ public class RetrieverRestTest {
 	@Test
 	public void verifyGetAccountByCohortId() {
 		given().when().get(getAccountByCohortId + "1111111111").then()
-        .body("message",equalTo("Id supplied does not exist. Id: 1111111111"));
-	}
-	
-	@Test
-	public void verifyDeleteAccountById() {
-		given().when().get(deleteAccountById + "1111111111").then()
         .body("message",equalTo("Id supplied does not exist. Id: 1111111111"));
 	}
 	
