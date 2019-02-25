@@ -1,4 +1,4 @@
-package com.qa.feedback_forms_accounts.persistence.domain;
+package com.qa.accounts.persistence.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +13,8 @@ public class Account {
 	private Long accountID;
 	private Long cohortID;
 	private boolean admin;
-	private String userName;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String password;
 	private boolean flagged;
@@ -22,10 +23,11 @@ public class Account {
 		
 	}
 	
-	public Account(Long cohortID, boolean admin, String userName, String email, String password, boolean flagged) {
+	public Account(Long cohortID, boolean admin, String firstName, String lastName, String email, String password, boolean flagged) {
 		this.cohortID = cohortID;
 		this.admin = admin;
-		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 		this.flagged = flagged;
@@ -55,14 +57,6 @@ public class Account {
 		this.admin = admin;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -86,7 +80,21 @@ public class Account {
 	public void setFlagged(boolean flagged) {
 		this.flagged = flagged;
 	}
-	
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 	
 }
