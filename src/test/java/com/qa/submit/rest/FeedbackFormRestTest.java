@@ -19,14 +19,6 @@ public class FeedbackFormRestTest {
     	given()
         .contentType("application/json")
         .body(feedbackForm)
-        .when().post(postForm).then()
-        .body("cohortID",equalTo(1))
-        .body("userID",equalTo(2))
-    	.body("week",equalTo(2))
-    	.body("score",equalTo(8))
-    	.body("question1",equalTo("This week went good"))
-    	.body("question2",equalTo("Excellent"))
-    	.body("question3",equalTo("Test"))
-    	.body("question4",equalTo("How is it"));
+        .when().post(postForm).then().statusCode(200)
     }
 }
