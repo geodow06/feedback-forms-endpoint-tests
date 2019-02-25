@@ -29,16 +29,16 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetAccountById() {
-		given().when().get(getAccountById + "1").then().statusCode(200);
+		given().when().get(getAccountById + "1").then().body("accountID",equalTo(1));
 	}
 	
 	@Test
 	public void verifyGetAccountByEmail() {
-		given().when().get(getAccountByEmail + "Test.Account@qa.com").then().statusCode(200);
+		given().when().get(getAccountByEmail + "Test.Account@qa.com").then().body("email",equalTo("Test.Account@qa.com"));
 	}
 	
 	@Test
-	public void verifyGetAccountByCohortId() {
+	public void verifyGetAccountsByCohortId() {
 		given().when().get(getAccountByCohortId + "1").then().statusCode(200);
 	}
 	
@@ -49,7 +49,7 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetFeedbackFormByID() {
-		given().when().get(getFeedbackFormByID + "1").then().statusCode(200);
+		given().when().get(getFeedbackFormByID + "1").then().body("feedbackID",equalTo(1));
 	}
 	
 	@Test
@@ -59,6 +59,6 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetCohortByID() {
-		given().when().get(getCohortByID + "1").then().statusCode(200);
+		given().when().get(getCohortByID + "1").then().body("cohortID",equalTo(1));
 	}
 }
