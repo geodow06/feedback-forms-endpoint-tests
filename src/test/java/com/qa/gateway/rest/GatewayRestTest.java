@@ -10,29 +10,29 @@ import com.qa.cohort.persistence.domain.Cohort;
 import com.qa.submit.persistence.domain.FeedbackForm;
 
 public class GatewayRestTest {
-	private String basePath ="http://gateway:8080/gateway/";
+	private static String basePath ="http://gateway:8080/gateway/";
 	
-	private String createAccount = basePath + "createAccount";
-	private String createCohort = basePath + "createCohort";
-	private String createFeedback = basePath + "addFeedbackForm";
+	private static String createAccount = basePath + "createAccount";
+	private static String createCohort = basePath + "createCohort";
+	private static String createFeedback = basePath + "addFeedbackForm";
 	
-	private String deleteAccount = "http://accounts:8080/accounts/deleteByEmail/";
-	private String deleteCohort = "http://cohorts:8080/cohorts/deleteByCohortName/";
-	private String deleteFeedback = "http://submit:8080/feedbackForm/deleteByAccountID/";
+	private static String deleteAccount = "http://accounts:8080/accounts/deleteByEmail/";
+	private static String deleteCohort = "http://cohorts:8080/cohorts/deleteByCohortName/";
+	private static String deleteFeedback = "http://submit:8080/feedbackForm/deleteByAccountID/";
 	
-	private String getAccounts = basePath + "getAccounts";
-	private String getAccountByID = basePath + "getAccountByAccountID/";
-	private String getAccountByEmail = basePath + "getAccountsByCohortID/";
-	private String getAccountByCohortID = basePath + "getAccountByEmail/";
+	private static String getAccounts = basePath + "getAccounts";
+	private static String getAccountByID = basePath + "getAccountByAccountID/";
+	private static String getAccountByEmail = basePath + "getAccountsByCohortID/";
+	private static String getAccountByCohortID = basePath + "getAccountByEmail/";
 	
-	private String getAllFeedbackForms = basePath + "getAllFeedbackForms";
-	private String getFeedbackFormByID = basePath + "getFeedbackFormByID/";
+	private static String getAllFeedbackForms = basePath + "getAllFeedbackForms";
+	private static String getFeedbackFormByID = basePath + "getFeedbackFormByID/";
 
-	private String getAllCohorts = basePath + "getCohorts";
-	private String getCohortByID = basePath + "getCohortByCohortID/";
+	private static String getAllCohorts = basePath + "getCohorts";
+	private static String getCohortByID = basePath + "getCohortByCohortID/";
 	
-	private String email = "Test.User@qa.com";
-	private String cohortName = "Cohort Name";
+	private static String email = "Test.User@qa.com";
+	private static String cohortName = "Cohort Name";
 	
 	@Test
     public void verifyCreateAccount() {
@@ -105,7 +105,7 @@ public class GatewayRestTest {
 	}
 	
 	@AfterClass
-	public void terminate() {
+	public static void terminate() {
 		given().when().delete(deleteAccount + email).then();
 		given().when().delete(deleteCohort + cohortName).then();
     	given().when().delete(deleteFeedback + "1").then();

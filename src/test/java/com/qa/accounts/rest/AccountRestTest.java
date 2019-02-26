@@ -10,13 +10,13 @@ import com.qa.accounts.persistence.domain.Account;
 
 public class AccountRestTest {
 	
-	private String basePath ="http://accounts:8080/accounts";
-	private String postAccount = basePath + "/createAccount";
-	private String deleteAccount = basePath + "/deleteByEmail/"; 
+	private static String basePath ="http://accounts:8080/accounts";
+	private static String postAccount = basePath + "/createAccount";
+	private static String deleteAccount = basePath + "/deleteByEmail/"; 
 	
-	private String testEmail = "New.User@qa.com";
-	private String trainerEmail = "New.Trainer@qa.com";
-	private String traineeEmail = "New.Trainee@academytrainee.com";
+	private static String testEmail = "New.User@qa.com";
+	private static String trainerEmail = "New.Trainer@qa.com";
+	private static String traineeEmail = "New.Trainee@academytrainee.com";
 	
 	@Test
     public void verifyCreateAccount() {
@@ -49,7 +49,7 @@ public class AccountRestTest {
 	}
 	
 	@AfterClass
-	public void terminate() {
+	public static void terminate() {
 		given().when().delete(deleteAccount + testEmail).then();
 		given().when().delete(deleteAccount + trainerEmail).then();
 		given().when().delete(deleteAccount + traineeEmail).then();

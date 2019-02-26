@@ -10,9 +10,9 @@ import com.qa.submit.persistence.domain.FeedbackForm;
 
 public class FeedbackFormRestTest {
     
-    private String basePath ="http://submit:8080/feedbackForm";
-	private String postForm = basePath + "/addFeedbackForm";
-	private String deleteForms = basePath + "/deleteFeedbackForm/"; 
+    private static String basePath ="http://submit:8080/feedbackForm";
+	private static String postForm = basePath + "/addFeedbackForm";
+	private static String deleteForms = basePath + "/deleteFeedbackForm/"; 
     
     @Test
     public void verifyAddFeedbackForm() {
@@ -25,7 +25,7 @@ public class FeedbackFormRestTest {
     }
     
     @AfterClass
-	public void terminate() {
+	public static void terminate() {
     	given().when().delete(deleteForms + "1").then();
 	}
 }
