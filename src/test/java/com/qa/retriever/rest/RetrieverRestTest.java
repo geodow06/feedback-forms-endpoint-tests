@@ -20,7 +20,7 @@ public class RetrieverRestTest {
 
 	private String cohorts = basePath + "/cohorts";
 	private String getAllCohorts = cohorts + "/getCohorts";
-	private String getCohortByID = cohorts + "/getCohortById/";
+	private String getCohortByID = cohorts + "/getCohortByID/";
 	
 	@Test
     public void verifyGetAccounts() {
