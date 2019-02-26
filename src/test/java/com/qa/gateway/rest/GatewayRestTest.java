@@ -22,8 +22,8 @@ public class GatewayRestTest {
 	
 	private static String getAccounts = basePath + "getAccounts";
 	private static String getAccountByID = basePath + "getAccountByAccountID/";
-	private static String getAccountByEmail = basePath + "getAccountsByCohortID/";
-	private static String getAccountByCohortID = basePath + "getAccountByEmail/";
+	private static String getAccountByEmail = basePath + "getAccountByEmail/";
+	private static String getAccountByCohortID = basePath + "getAccountsByCohortID/";
 	
 	private static String getAllFeedbackForms = basePath + "getAllFeedbackForms";
 	private static String getFeedbackFormByID = basePath + "getFeedbackFormByID/";
