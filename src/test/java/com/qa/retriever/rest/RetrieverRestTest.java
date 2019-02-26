@@ -22,6 +22,8 @@ public class RetrieverRestTest {
 	private String getAllCohorts = cohorts + "/getCohorts";
 	private String getCohortByID = cohorts + "/getCohortByID/";
 	
+	private String testEmail = "Test.Account@qa.com";
+	
 	@Test
     public void verifyGetAccounts() {
 		given().when().get(getAccounts).then().statusCode(200);
@@ -34,7 +36,7 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetAccountByEmail() {
-		given().when().get(getAccountByEmail + "Test.Account@qa.com").then().body("email",equalTo("Test.User@qa.com"));
+		given().when().get(getAccountByEmail + testEmail).then().body("email",equalTo(testEmail));
 	}
 	
 	@Test
