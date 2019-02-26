@@ -1,6 +1,6 @@
 package com.qa.accounts.rest;
 
-import static com.jayway.restassured.RestAssured.given; 
+import static com.jayway.restassured.RestAssured.given;  
 import static org.hamcrest.CoreMatchers.equalTo;
 import org.junit.Test;
 

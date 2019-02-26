@@ -7,11 +7,11 @@ import org.junit.Test;
 import com.qa.cohort.persistence.domain.Cohort;
 
 public class CohortRestTest {
-	private String base_path ="http://cohorts:8080/cohorts";
-	private String postCohort = base_path + "/createCohort"; 
+	private String basePath ="http://cohorts:8080/cohorts";
+	private String postCohort = basePath + "/createCohort"; 
 	
 	@Test
-    public void verifyCreateAccount() {
+    public void verifyCreateCohort() {
 		Cohort account = new Cohort("Cohort Name","Tainer Name",1,"description");
 		given()
         .contentType("application/json")
