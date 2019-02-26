@@ -22,7 +22,7 @@ public class RetrieverRestTest {
 	private String getAllCohorts = cohorts + "/getCohorts";
 	private String getCohortByID = cohorts + "/getCohortByID/";
 	
-	private String testEmail = "Test.Account@qa.com";
+	private String testEmail = "Test.User@qa.com";
 	
 	@Test
     public void verifyGetAccounts() {
