@@ -34,7 +34,7 @@ public class RetrieverRestTest {
 	
 	@Test
 	public void verifyGetAccountByEmail() {
-		given().when().get(getAccountByEmail + "Test.Account@qa.com").then().body("email",equalTo("Test.Account@qa.com"));
+		given().when().get(getAccountByEmail + "Test.Account@qa.com").then().body("email",equalTo("Test.User@qa.com"));
 	}
 	
 	@Test
