@@ -16,9 +16,9 @@ public class GatewayRestTest {
 	private static String createCohort = basePath + "createCohort";
 	private static String createFeedback = basePath + "addFeedbackForm";
 	
-	private static String deleteAccount = "http://accounts:8080/accounts/deleteByEmail/";
-	private static String deleteCohort = "http://cohorts:8080/cohorts/deleteByCohortName/";
-	private static String deleteFeedback = "http://submit:8080/feedbackForm/deleteByAccountID/";
+	private static String deleteAccount = "http://retriever:8080/accounts/deleteByEmail/";
+	private static String deleteCohort = "http://retriever:8080/cohorts/deleteByCohortName/";
+	private static String deleteFeedback = "http://retriever:8080/feedbackForm/deleteByAccountID/";
 	
 	private static String getAccounts = basePath + "getAccounts";
 	private static String getAccountByID = basePath + "getAccountByAccountID/";
@@ -31,12 +31,12 @@ public class GatewayRestTest {
 	private static String getAllCohorts = basePath + "getCohorts";
 	private static String getCohortByID = basePath + "getCohortByCohortID/";
 	
-	private static String email = "Test.User@qa.com";
+	private static String tempEmail = "Temp.User@qa.com";
 	private static String cohortName = "Cohort Name";
 	
 	@Test
     public void verifyCreateAccount() {
-		Account account = new Account(1L,true,"New","User",email,"password",false);
+		Account account = new Account(1L,true,"Temp","User",tempEmail,"password",false);
 		given()
         .contentType("application/json")
         .body(account)
@@ -106,7 +106,7 @@ public class GatewayRestTest {
 	
 	@AfterClass
 	public static void terminate() {
-		given().when().delete(deleteAccount + email).then();
+		given().when().delete(deleteAccount + tempEmail).then();
 		given().when().delete(deleteCohort + cohortName).then();
     	given().when().delete(deleteFeedback + "1").then();
 	}
