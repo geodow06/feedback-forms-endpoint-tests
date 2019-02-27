@@ -16,8 +16,7 @@ public class FeedbackFormRestTest {
     
     @Test
     public void verifyAddFeedbackForm() {
-    	FeedbackForm feedbackForm = new FeedbackForm(1L, 1L, 2, 8, "This week went good", "Excellent", "Test", "How is it");
-    	
+    	FeedbackForm feedbackForm = new FeedbackForm(1L, 1L, 2, 8, "This week went good", "Excellent", "Test", "How is it");	
     	given()
         .contentType("application/json")
         .body(feedbackForm)

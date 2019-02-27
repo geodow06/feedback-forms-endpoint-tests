@@ -16,10 +16,10 @@ public class CohortRestTest {
 	
 	@Test
     public void verifyCreateCohort() {
-		Cohort account = new Cohort(cohortName,"Trainer Name",1,"description");
+		Cohort cohort = new Cohort(cohortName,"Trainer Name",1,"description");
 		given()
         .contentType("application/json")
-        .body(account)
+        .body(cohort)
         .when().post(postCohort).then()
         .statusCode(200);
 	}
